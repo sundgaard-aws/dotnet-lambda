@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "V3E95V8C21vk9LRYaWb1KkZELaOeUXdcecRzJwBLlC3azO3GfZBE11ER06nA6W9ZU++QgjsNSh1E7J+yXP0jGw==",
+  "success": true,
+  "projectFilePath": "c:\\github\\dotnet-lambda-function\\FunctionHandlerSlim\\dotnet\\Console\\Console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sundgaar\\.nuget\\packages\\awssdk.core\\3.7.105.6\\awssdk.core.3.7.105.6.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\awssdk.s3\\3.7.103.9\\awssdk.s3.3.7.103.9.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\awssdk.secretsmanager\\3.7.101.32\\awssdk.secretsmanager.3.7.101.32.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\bouncycastle.cryptography\\2.0.0\\bouncycastle.cryptography.2.0.0.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\fluentftp\\44.0.1\\fluentftp.44.0.1.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\pgpcore\\5.9.0\\pgpcore.5.9.0.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\ssh.net\\2020.0.2\\ssh.net.2020.0.2.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\sshnet.security.cryptography\\1.3.0\\sshnet.security.cryptography.1.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

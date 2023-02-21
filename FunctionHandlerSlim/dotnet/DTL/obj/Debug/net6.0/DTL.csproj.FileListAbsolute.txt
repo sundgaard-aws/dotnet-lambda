@@ -1,0 +1,12 @@
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\bin\Debug\net6.0\DTL.deps.json
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\bin\Debug\net6.0\DTL.dll
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\bin\Debug\net6.0\DTL.pdb
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\DTL.csproj.AssemblyReference.cache
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\DTL.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\DTL.AssemblyInfoInputs.cache
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\DTL.AssemblyInfo.cs
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\DTL.csproj.CoreCompileInputs.cache
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\DTL.dll
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\refint\DTL.dll
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\DTL.pdb
+C:\github\aws-lambda\pgp-crypt\dotnet\DTL\obj\Debug\net6.0\ref\DTL.dll

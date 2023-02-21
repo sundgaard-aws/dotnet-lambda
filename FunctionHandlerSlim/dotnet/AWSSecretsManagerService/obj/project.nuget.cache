@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2KtEKjfkJY9vO86vCRKCBzL6+ZTTqnaMohnJJAaM7D+VQeRk4OkLTjt3cpb238QqITKEtIJeWqlZbsthdfaItQ==",
+  "success": true,
+  "projectFilePath": "c:\\github\\dotnet-lambda-function\\FunctionHandlerSlim\\dotnet\\AWSSecretsManagerService\\AWSSecretsManagerService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sundgaar\\.nuget\\packages\\awssdk.core\\3.7.105.6\\awssdk.core.3.7.105.6.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\awssdk.secretsmanager\\3.7.101.32\\awssdk.secretsmanager.3.7.101.32.nupkg.sha512"
+  ],
+  "logs": []
+}

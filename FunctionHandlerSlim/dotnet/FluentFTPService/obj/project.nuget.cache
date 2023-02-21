@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hCvyB30hXhoJhLthH/p3O1RcK0RygqyzvDWXIfCEA7GnbneNOJTqDuDB301qON1YDlj0MWKvd8/lhdOdvT8m9Q==",
+  "success": true,
+  "projectFilePath": "c:\\github\\dotnet-lambda-function\\FunctionHandlerSlim\\dotnet\\FluentFTPService\\FluentFTPService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sundgaar\\.nuget\\packages\\fluentftp\\44.0.1\\fluentftp.44.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

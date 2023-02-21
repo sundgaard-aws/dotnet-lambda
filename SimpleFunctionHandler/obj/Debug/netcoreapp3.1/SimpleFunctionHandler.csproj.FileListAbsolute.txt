@@ -1,0 +1,9 @@
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\bin\Debug\netcoreapp3.1\SimpleFunctionHandler.deps.json
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\bin\Debug\netcoreapp3.1\SimpleFunctionHandler.dll
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\bin\Debug\netcoreapp3.1\SimpleFunctionHandler.pdb
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\obj\Debug\netcoreapp3.1\SimpleFunctionHandler.csprojAssemblyReference.cache
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\obj\Debug\netcoreapp3.1\SimpleFunctionHandler.AssemblyInfoInputs.cache
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\obj\Debug\netcoreapp3.1\SimpleFunctionHandler.AssemblyInfo.cs
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\obj\Debug\netcoreapp3.1\SimpleFunctionHandler.csproj.CoreCompileInputs.cache
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\obj\Debug\netcoreapp3.1\SimpleFunctionHandler.dll
+C:\github\dotnet-lambda-function\SimpleFunctionHandler\obj\Debug\netcoreapp3.1\SimpleFunctionHandler.pdb

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "cypLdtZC3D/YCl69CLWCyaUqmCcdBuvhtOEItAxzs9vVLMh9NoTJz7INIuLVHlIb35LZMP7QcEQpuV+gc7yc6A==",
+  "success": true,
+  "projectFilePath": "c:\\github\\dotnet-lambda-function\\FunctionHandlerSlim\\dotnet\\OpenSSHService\\OpenSSHService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sundgaar\\.nuget\\packages\\ssh.net\\2020.0.2\\ssh.net.2020.0.2.nupkg.sha512",
+    "C:\\Users\\sundgaar\\.nuget\\packages\\sshnet.security.cryptography\\1.3.0\\sshnet.security.cryptography.1.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

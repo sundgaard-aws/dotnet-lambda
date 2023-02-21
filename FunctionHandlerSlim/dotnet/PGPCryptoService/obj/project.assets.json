@@ -1,0 +1,128 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "BouncyCastle.Cryptography/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {}
+        }
+      },
+      "PgpCore/5.9.0": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/PgpCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PgpCore.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BouncyCastle.Cryptography/2.0.0": {
+      "sha512": "pzHd/gZou2SG4tXQQwXt1oEVJ3ZpmHVa5/Hg0k9QMkdc84HEUBb2DI9ajRlw6TS6dTy/UPZXLjpV9Us5L0SeVA==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.0.0.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
+      ]
+    },
+    "PgpCore/5.9.0": {
+      "sha512": "jK/unNBJQZKSkaOx2O/xCFmOhTA/pmVrCDNgVlzSxFOp4wV5ekeDJ0ThNb7L354gsAUun0HpFwHFAB41duUR4A==",
+      "type": "package",
+      "path": "pgpcore/5.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PgpCore.dll",
+        "pgpcore.5.9.0.nupkg.sha512",
+        "pgpcore.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "PgpCore >= 5.9.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\sundgaar\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "c:\\github\\dotnet-lambda-function\\FunctionHandlerSlim\\dotnet\\PGPCryptoService\\PGPCryptoService.csproj",
+      "projectName": "PGPCryptoService",
+      "projectPath": "c:\\github\\dotnet-lambda-function\\FunctionHandlerSlim\\dotnet\\PGPCryptoService\\PGPCryptoService.csproj",
+      "packagesPath": "C:\\Users\\sundgaar\\.nuget\\packages\\",
+      "outputPath": "c:\\github\\dotnet-lambda-function\\FunctionHandlerSlim\\dotnet\\PGPCryptoService\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\sundgaar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "PgpCore": {
+            "target": "Package",
+            "version": "[5.9.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.309\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

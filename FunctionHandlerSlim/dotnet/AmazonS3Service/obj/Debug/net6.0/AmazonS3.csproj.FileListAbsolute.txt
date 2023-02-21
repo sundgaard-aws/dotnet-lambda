@@ -1,0 +1,12 @@
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\bin\Debug\net6.0\AmazonS3.deps.json
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\bin\Debug\net6.0\AmazonS3.dll
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\bin\Debug\net6.0\AmazonS3.pdb
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\AmazonS3.csproj.AssemblyReference.cache
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\AmazonS3.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\AmazonS3.AssemblyInfoInputs.cache
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\AmazonS3.AssemblyInfo.cs
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\AmazonS3.csproj.CoreCompileInputs.cache
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\AmazonS3.dll
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\refint\AmazonS3.dll
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\AmazonS3.pdb
+C:\github\aws-lambda\pgp-crypt\dotnet\AmazonS3\obj\Debug\net6.0\ref\AmazonS3.dll
