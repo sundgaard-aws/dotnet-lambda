@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Console",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/code/Console/bin/Debug/net6.0/Console.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/code/Console",
+            //"console": "internalConsole",
+            //"console": "integratedTerminal",
+            "stopAtEntry": false,
+            "logging": { "moduleLoad": false},
+        },
+        {
+            "name": "Lambda Handler",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/code/LambdaHandler/bin/Debug/net6.0/LambdaHandler.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/code/LambdaHandler",
+            //"console": "internalConsole",
+            //"console": "integratedTerminal",
+            "stopAtEntry": false,
+            "logging": { "moduleLoad": false},
+        },        
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
