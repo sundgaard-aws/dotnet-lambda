@@ -25,6 +25,7 @@ namespace OM.AWS.Demo.API
             await paymentService.ProcessPaymentAsync();
             await shippingService.PickupPackageAsync(null, null, null);
             await shippingService.SendPackageAsync(null, null, null);
+            Console.WriteLine($"Order ID={order.OrderGUID}");
             Console.WriteLine("Ended ProcessOrderAsync.");
         }
     }

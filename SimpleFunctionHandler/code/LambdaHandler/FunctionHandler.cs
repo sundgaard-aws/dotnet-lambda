@@ -26,7 +26,7 @@ namespace OM.AWS.Demo.API {
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<Object> Invoke() {
-            await orderBO.ProcessOrderAsync(new DTL.OrderDTO());
+            await orderBO.ProcessOrderAsync(new DTL.OrderDTO{OrderGUID=Guid.NewGuid().ToString()});
             return new { Status="Success", Code=200 };
         }   
     }
