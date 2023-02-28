@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\SL\SL.csproj"/>
+    <ProjectReference Include="..\DTL\DTL.csproj"/>
+    <ProjectReference Include="..\PGPCryptoService\PGPCryptoService.csproj"/>
+    <ProjectReference Include="..\AmazonS3Service\AmazonS3Service.csproj"/>
+    <ProjectReference Include="..\FluentFTPService\FluentFTPService.csproj"/>
+    <ProjectReference Include="..\OpenSSHService\OpenSSHService.csproj"/>
+    <ProjectReference Include="..\AWSSecretsManagerService\AWSSecretsManagerService.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0"/>
+  </ItemGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>

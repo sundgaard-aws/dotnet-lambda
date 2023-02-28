@@ -1,3 +1,0 @@
-is_global = true
-build_property.RootNamespace = AthenaODBCFunction
-build_property.ProjectDir = c:\github\dotnet-lambda-function\AthenaODBCFunction\src\AthenaODBCFunction\
