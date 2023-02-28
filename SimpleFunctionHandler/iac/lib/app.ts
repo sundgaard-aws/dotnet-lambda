@@ -13,7 +13,7 @@ import { WebStack } from './web-stack';
 
 const app = new cdk.App();
 var region=process.env["CDK_DEFAULT_REGION"];
-region="eu-north-1"
+region="eu-central-1"
 var props = {env: {account: process.env["CDK_DEFAULT_ACCOUNT"], region: region } };
 var metaData = new MetaData();
 

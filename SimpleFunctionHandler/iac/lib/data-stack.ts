@@ -14,11 +14,11 @@ export class DataStack extends Core.Stack {
     constructor(scope: Core.Construct, id: string, vpc: IVpc, apiRole: IRole, props?: Core.StackProps) {
         super(scope, id, props);
         this.apiRole = apiRole;
-        this.createLoginTable();
+        /*this.createLoginTable();
         this.createPortfolioTable();
         this.createPriceBucket();
         this.createPortfolioBucket();
-        this.createAssetBucket();
+        this.createAssetBucket();*/
     }
 
     private createAssetBucket() {

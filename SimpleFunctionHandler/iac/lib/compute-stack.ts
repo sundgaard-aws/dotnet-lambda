@@ -13,9 +13,10 @@ import { SSMHelper } from './ssm-helper';
 import { ApiEventSource } from '@aws-cdk/aws-lambda-event-sources';
 import { HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2';
 import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
+import { CodeartifactClient } from '@aws-sdk/client-codeartifact';
 
 export class ComputeStack extends Core.Stack {
-    private runtime:Lambda.Runtime = Lambda.Runtime.NODEJS_16_X;    
+    private runtime:Lambda.Runtime = Lambda.Runtime.DOTNET_6;    
     private ssmHelper = new SSMHelper();
     public apiRole:IAM.IRole;
 
@@ -23,26 +24,11 @@ export class ComputeStack extends Core.Stack {
         super(scope, id, props);
 
         this.apiRole = this.buildAPIRole();
-        this.createLoginFunction(apiSecurityGroup, vpc);
-        this.createCreateLoginFunction(apiSecurityGroup, vpc);
-        this.createCreatePortfolioFunction(apiSecurityGroup, vpc);
-        this.createChoosePortfolioFunction(apiSecurityGroup, vpc);
-        /*this.createMapMoveFunction(apiSecurityGroup, vpc);
-        this.createEnterTownFunction(apiSecurityGroup, vpc);
-        this.createLeaveTownFunction(apiSecurityGroup, vpc);
-        this.createViewCharacterFunction(apiSecurityGroup, vpc);
-        this.createVisitMeadhallFunction(apiSecurityGroup, vpc);
-        this.createTrainportfolioFunction(apiSecurityGroup, vpc);
-        this.createVisitSmithyFunction(apiSecurityGroup, vpc);
-        this.createBuyItemFunction(apiSecurityGroup, vpc);
-        this.createSellItemFunction(apiSecurityGroup, vpc);
-        this.createPlayRoundFunction(apiSecurityGroup, vpc);
-        this.createFunctionAcceptFate(apiSecurityGroup, vpc);
-        this.createFunctionLootCorpse(apiSecurityGroup, vpc);*/
-        //this.createUpdateStatusFunction();
+        this.createProcessOrderFunction(apiSecurityGroup, vpc);
     }
 
     private createLambdaFunction(apiSecurityGroup: ISecurityGroup, name:string, handlerMethod:string, assetPath:string, vpc:EC2.IVpc):Lambda.Function {
+        //var codeArtifactClient=new CodeartifactClient({});
         var codeFromLocalZip = Lambda.Code.fromAsset(assetPath);
         var lambdaFunction = new Lambda.Function(this, MetaData.PREFIX+name, { 
             functionName: MetaData.PREFIX+name, vpc: vpc, code: codeFromLocalZip, handler: handlerMethod, runtime: this.runtime, memorySize: 256, 
@@ -63,62 +49,10 @@ export class ComputeStack extends Core.Stack {
         return lambdaFunction;
     } 
 
-    private createLoginFunction(apiSecurityGroup: ISecurityGroup, vpc: IVpc):Lambda.Function {
-        return this.createLambdaFunction(apiSecurityGroup, "login-fn", "index.handler", "../src/api/login", vpc);
+    private createProcessOrderFunction(apiSecurityGroup: ISecurityGroup, vpc: IVpc):Lambda.Function {
+        return this.createLambdaFunction(apiSecurityGroup, "process-order-fn", "FunctionHandler::OM.AWS.Demo.API.FunctionHandler::Invoke", "../code/LambdaHandler/zip/FunctionHandler.zip", vpc);
     }
 
-    private createCreateLoginFunction(apiSecurityGroup: ISecurityGroup, vpc: IVpc):Lambda.Function {
-        return this.createLambdaFunction(apiSecurityGroup, "create-login-fn", "index.handler", "../src/api/create-login", vpc);
-    }
-
-    private createCreatePortfolioFunction(apiSecurityGroup: ISecurityGroup, vpc: IVpc):Lambda.Function {
-        return this.createLambdaFunction(apiSecurityGroup, "create-portfolio-fn", "index.handler", "../src/api/create-portfolio", vpc);
-    }
-
-    private createChoosePortfolioFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "choose-portfolio-fn", "index.handler", "../src/api/choose-portfolio", vpc);
-    }
-
-    /*private createUpdateStatusFunction(apiSecurityGroup: ISecurityGroup, vpc: IVpc):Lambda.Function {
-        return this.createLambdaFunction(apiSecurityGroup, "update-status-api-lam", "index.handler", "assets/update-status-api/", vpc);
-    }*/
-
-    private createTrainportfolioFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "train-portfolio-fn", "index.handler", "../src/api/train-portfolio", vpc);
-    }
-    private createLeaveTownFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "leave-town-fn", "index.handler", "../src/api/leave-town", vpc);
-    }
-    private createEnterTownFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "enter-town-fn", "index.handler", "../src/api/enter-town", vpc);
-    }
-    private createVisitMeadhallFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "visit-meadhall-fn", "index.handler", "../src/api/visit-meadhall", vpc);
-    }
-    private createViewCharacterFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "view-character-fn", "index.handler", "../src/api/view-character", vpc);
-    }
-    private createVisitSmithyFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "visit-smithy-fn", "index.handler", "../src/api/visit-smithy", vpc);
-    }           
-    private createMapMoveFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "map-move-fn", "index.handler", "../src/api/map-move", vpc);
-    }    
-    private createSellItemFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "sell-item-fn", "index.handler", "../src/api/sell-item", vpc);
-    }
-    private createBuyItemFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "buy-item-fn", "index.handler", "../src/api/buy-item", vpc);
-    }
-    private createPlayRoundFunction(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "play-round-fn", "index.handler", "../src/api/play-round", vpc);
-    } 
-    private createFunctionAcceptFate(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "accept-fate-fn", "index.handler", "../src/api/accept-fate", vpc);
-    } 
-    private createFunctionLootCorpse(apiSecurityGroup: EC2.ISecurityGroup, vpc: EC2.IVpc) {
-        return this.createLambdaFunction(apiSecurityGroup, "loot-corpse-fn", "index.handler", "../src/api/loot-corpse", vpc);
-    }     
     
     /*private createStepFunctionsTrigger(apiSecurityGroup: ISecurityGroup, vpc: IVpc, queue:SQS.IQueue) {
         var sfnLambdaTriggerFunction = this.createLambdaFunction(apiSecurityGroup, "invoke-sfn-api-lam", "index.handler", "assets/invoke-sfn-api/", vpc);

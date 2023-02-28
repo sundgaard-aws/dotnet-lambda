@@ -42,6 +42,7 @@
     "@aws-cdk/aws-secretsmanager": "^1.192.0",
     "@aws-cdk/core": "^1.192.0",
     "@aws-cdk/assert": "^1.192.0",
+    "@aws-sdk/client-codeartifact": "^3.279.0",
     "source-map-support": "^0.5.16",
     "uuid": "^8.3.2"
   }
