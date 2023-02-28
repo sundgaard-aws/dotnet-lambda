@@ -50,7 +50,7 @@ export class ComputeStack extends Core.Stack {
     } 
 
     private createProcessOrderFunction(apiSecurityGroup: ISecurityGroup, vpc: IVpc):Lambda.Function {
-        return this.createLambdaFunction(apiSecurityGroup, "process-order-fn", "FunctionHandler::OM.AWS.Demo.API.FunctionHandler::Invoke", "../code/LambdaHandler/zip/FunctionHandler.zip", vpc);
+        return this.createLambdaFunction(apiSecurityGroup, "process-order-fn", "LambdaHandler::OM.AWS.Demo.API.FunctionHandler::Invoke", "../code/LambdaHandler/publish", vpc);
     }
 
     
