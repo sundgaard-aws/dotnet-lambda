@@ -9,6 +9,7 @@ namespace OM.AWS.Demo.API
     {
         private IPaymentService paymentService;
         private IShippingService shippingService;
+        private IDatabaseService databaseService;
 
         public OrderBO(IPaymentService paymentService, IShippingService shippingService) {
             this.paymentService=paymentService;
@@ -22,9 +23,16 @@ namespace OM.AWS.Demo.API
             //secretsService.CreateSecret("secret1", secret).ConfigureAwait(false).GetAwaiter().GetResult();
             //var secret = secretsService.RestoreSecret<SecretDTO>("demo/secret2").ConfigureAwait(false).GetAwaiter().GetResult();
             //Console.WriteLine($"KeyType={secret.keyType}");
+            await databaseService.SaveAsync<OrderDTO>(order);
             await paymentService.ProcessPaymentAsync();
+            order.Status=OrderDTO.StatusEnum.PAID;
+            await databaseService.SaveAsync<OrderDTO>(order);
             await shippingService.PickupPackageAsync(null, null, null);
+            order.Status=OrderDTO.StatusEnum.PICKED_UP;
+            await databaseService.SaveAsync<OrderDTO>(order);
             await shippingService.SendPackageAsync(null, null, null);
+            order.Status=OrderDTO.StatusEnum.SENT;
+            await databaseService.SaveAsync<OrderDTO>(order);
             Console.WriteLine($"Order ID={order.OrderGUID}");
             Console.WriteLine("Ended ProcessOrderAsync.");
         }

@@ -7,6 +7,7 @@
       <ProjectReference Include="..\SL\SL.csproj"/>
       <ProjectReference Include="..\DTL\DTL.csproj"/>
       <ProjectReference Include="..\AmazonS3\AmazonS3.csproj"/>
+      <ProjectReference Include="..\AmazonDynamoDB\AmazonDynamoDB.csproj"/>
       <ProjectReference Include="..\AWSSecretsManager\AWSSecretsManager.csproj"/>
     </ItemGroup>
   </Project>

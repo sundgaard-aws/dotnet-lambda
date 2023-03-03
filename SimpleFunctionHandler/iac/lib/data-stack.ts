@@ -14,11 +14,18 @@ export class DataStack extends Core.Stack {
     constructor(scope: Core.Construct, id: string, vpc: IVpc, apiRole: IRole, props?: Core.StackProps) {
         super(scope, id, props);
         this.apiRole = apiRole;
-        /*this.createLoginTable();
-        this.createPortfolioTable();
-        this.createPriceBucket();
-        this.createPortfolioBucket();
-        this.createAssetBucket();*/
+        this.createOrderTable();
+    }
+
+    private createOrderTable() {
+        var name = MetaData.PREFIX+"order";
+        var table=new Table(this, name, {
+            tableName: name,
+            billingMode: BillingMode.PAY_PER_REQUEST,
+            partitionKey: {name: "email", type: AttributeType.STRING},
+            sortKey: {name: "order-guid", type: AttributeType.STRING}
+        });
+        table.grantReadWriteData(this.apiRole);
     }
 
     private createAssetBucket() {
@@ -56,15 +63,5 @@ export class DataStack extends Core.Stack {
             partitionKey: {name: "portfolioGuid", type: AttributeType.STRING},
             sortKey: {name: "userGuid", type: AttributeType.STRING}
         });
-    }
-    
-    private createLoginTable() {
-        var name = MetaData.PREFIX+"login";
-        var table=new Table(this, name, {
-            tableName: name,
-            billingMode: BillingMode.PAY_PER_REQUEST,
-            partitionKey: {name: "email", type: AttributeType.STRING}
-        });
-        //table.grantReadWriteData();
     }
 }

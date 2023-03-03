@@ -1,7 +1,12 @@
+using Amazon.DynamoDBv2.DataModel;
+
 namespace OM.AWS.Demo.DTL
 {
-    public class OrderDTO
+    [DynamoDBTable("om-lam-order")] public class OrderDTO
     {
-        public string OrderGUID { get; set; }
+        public enum StatusEnum { CREATED, PICKED_UP, PAID, SENT }
+        [DynamoDBHashKey] public string? Email { get; set; }
+        [DynamoDBRangeKey] public string? OrderGUID { get; set; }
+        public StatusEnum Status { get; set; }
     }
 }

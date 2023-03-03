@@ -28,14 +28,12 @@ export class ComputeStack extends Core.Stack {
     }
 
     private createLambdaFunction(apiSecurityGroup: ISecurityGroup, name:string, handlerMethod:string, assetPath:string, vpc:EC2.IVpc):Lambda.Function {
-        //var codeArtifactClient=new CodeartifactClient({});
         var codeFromLocalZip = Lambda.Code.fromAsset(assetPath);
         var lambdaFunction = new Lambda.Function(this, MetaData.PREFIX+name, { 
             functionName: MetaData.PREFIX+name, vpc: vpc, code: codeFromLocalZip, handler: handlerMethod, runtime: this.runtime, memorySize: 256, 
             timeout: Core.Duration.seconds(5), role: this.apiRole, securityGroups: [apiSecurityGroup],
             tracing: Lambda.Tracing.ACTIVE,
         });
-        
         const lambdaIntegration = new HttpLambdaIntegration(MetaData.PREFIX+name+"-lam-int", lambdaFunction);        
         const httpApi = new HttpApi(this, MetaData.PREFIX+name+"-api");
         
@@ -53,12 +51,6 @@ export class ComputeStack extends Core.Stack {
         return this.createLambdaFunction(apiSecurityGroup, "process-order-fn", "LambdaHandler::OM.AWS.Demo.API.FunctionHandler::Invoke", "../code/LambdaHandler/publish", vpc);
     }
 
-    
-    /*private createStepFunctionsTrigger(apiSecurityGroup: ISecurityGroup, vpc: IVpc, queue:SQS.IQueue) {
-        var sfnLambdaTriggerFunction = this.createLambdaFunction(apiSecurityGroup, "invoke-sfn-api-lam", "index.handler", "assets/invoke-sfn-api/", vpc);
-        sfnLambdaTriggerFunction.addEventSource(new LambdaEvents.SqsEventSource(queue, {}));
-    }*/
-    
     private buildAPIRole(): IAM.IRole {
         var role = new IAM.Role(this, MetaData.PREFIX+"api-role", {
             description: "Lambda API Role",
@@ -75,12 +67,17 @@ export class ComputeStack extends Core.Stack {
         role.addToPolicy(new IAM.PolicyStatement({
           effect: IAM.Effect.ALLOW,
           resources: ["*"],
-          actions: ["secretsmanager:GetSecretValue","dbqms:*","rds-data:*","xray:*","dynamodb:GetItem","dynamodb:PutItem","dynamodb:UpdateItem","dynamodb:Scan","dynamodb:Query"]
+          actions: ["xray:*"]
         }));
 
         Core.Tags.of(role).add(MetaData.NAME, MetaData.PREFIX+"api-role");
         return role;
-    }      
+    }    
+    
+    /*private createStepFunctionsTrigger(apiSecurityGroup: ISecurityGroup, vpc: IVpc, queue:SQS.IQueue) {
+        var sfnLambdaTriggerFunction = this.createLambdaFunction(apiSecurityGroup, "invoke-sfn-api-lam", "index.handler", "assets/invoke-sfn-api/", vpc);
+        sfnLambdaTriggerFunction.addEventSource(new LambdaEvents.SqsEventSource(queue, {}));
+    }*/
 
     private createLambdaCodeBucket()
     {
